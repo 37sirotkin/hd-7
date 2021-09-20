@@ -2977,25 +2977,25 @@
       <div id="find-a-capcake" class="find-text-animation hide"></div>
     </div>
     <script>
-      // if (mraid.getState() === "loading") {
-      //   mraid.addEventListener("ready", onSdkReady);
-      // } else {
-      //   onSdkReady();
-      // }
+      if (mraid.getState() === "loading") {
+        mraid.addEventListener("ready", onSdkReady);
+      } else {
+        onSdkReady();
+      }
 
-      // function viewableChangeHandler(viewable) {
-      //   if (viewable) {
-      //   } else {
-      //     // pause
-      //   }
-      // }
+      function viewableChangeHandler(viewable) {
+        if (viewable) {
+        } else {
+          // pause
+        }
+      }
 
-      // function onSdkReady() {
-      //   mraid.addEventListener("viewableChange", viewableChangeHandler);
-      //   // Wait for the ad to become viewable for the first time
-      //   if (mraid.isViewable()) {
-      //   }
-      // }
+      function onSdkReady() {
+        mraid.addEventListener("viewableChange", viewableChangeHandler);
+        // Wait for the ad to become viewable for the first time
+        if (mraid.isViewable()) {
+        }
+      }
 
       const start = () => {
         const container = document.getElementById("container");
