@@ -3080,23 +3080,17 @@
             viewElement(star2, false);
             starPopSound.play();
           }
-          const showGreat = () => {
-            viewElement(great, false);
-            starPopSound.play();
-          }
 
           const showStars = () => {
             viewElement(star1, false);
             starPopSound.play();
             star1.addEventListener("animationend", showStar3);
             star3.addEventListener("animationend", showStar2);
-            star2.addEventListener("animationend", showGreat);
           };
 
           const hideStars = () => {
             star1.removeEventListener("animationend", showStar3);
             star3.removeEventListener("animationend", showStar2);
-            star2.removeEventListener("animationend", showGreat);
             greatElements.forEach((element) => {
               viewElement(element, true);
             });
@@ -3130,7 +3124,7 @@
             );
             container.classList.add("background-great-animation");
             showStars();
-            great.addEventListener("animationend", firstSceneTranstion);
+            star2.addEventListener("animationend", firstSceneTranstion);
           };
 
           const firstSceneTranstion = () => {
@@ -3163,7 +3157,7 @@
             );
             container.classList.add("background-great-animation");
             showStars();
-            great.addEventListener("animationend", secondSceneTranstion);
+            star2.addEventListener("animationend", secondSceneTranstion);
           };
 
           const secondSceneTranstion = () => {
