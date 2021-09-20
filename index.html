@@ -2998,7 +2998,6 @@
         mraid.addEventListener("viewableChange", viewableChangeHandler);
         // Wait for the ad to become viewable for the first time
         if (mraid.isViewable()) {
-
         }
       }
 
@@ -3076,15 +3075,19 @@
           const showStars = () => {
             viewElement(star1, false);
             starPopSound.play();
-            star1.addEventListener("animationend", function() {
+            // star1.addEventListener("animationend", function() {
+            //   viewElement(star3, false);
+            //   starPopSound.play();
+            // });
+            setTimeout(() => {
               viewElement(star3, false);
               starPopSound.play();
-            });
-            star3.addEventListener("animationend", function() {
+            }, 1000);
+            star3.addEventListener("animationend", function () {
               viewElement(star2, false);
               starPopSound.play();
             });
-            star2.addEventListener("animationend", function() {
+            star2.addEventListener("animationend", function () {
               viewElement(great, false);
             });
           };
