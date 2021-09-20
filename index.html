@@ -2221,9 +2221,7 @@
       }
 
       .star-animation {
-        animation: starAnimation;
-        animation-duration: 0.3s;
-        animation-iteration-count: initial;
+        animation: starAnimation 0.3s;
       }
 
       @keyframes starAnimation {
@@ -3075,29 +3073,17 @@
           const showStars = () => {
             viewElement(star1, false);
             starPopSound.play();
-            setTimeout(() => {
+            star1.addEventListener("animationend", function() {
               viewElement(star3, false);
               starPopSound.play();
-            },500)
-            // star1.addEventListener("animationend", function() {
-            //   viewElement(star3, false);
-            //   starPopSound.play();
-            // });
-            setTimeout(() => {
+            });
+            star3.addEventListener("animationend", function () {
               viewElement(star2, false);
               starPopSound.play();
-            },1000)
-            // star3.addEventListener("animationend", function () {
-            //   viewElement(star2, false);
-            //   starPopSound.play();
-            // });
-            setTimeout(() => {
+            });
+            star2.addEventListener("animationend", function () {
               viewElement(great, false);
-              starPopSound.play();
-            },1500)
-            // star2.addEventListener("animationend", function () {
-            //   viewElement(great, false);
-            // });
+            });
           };
 
           const hideStars = () => {
