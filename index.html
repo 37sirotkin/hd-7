@@ -3076,15 +3076,15 @@
           const showStars = () => {
             viewElement(star1, false);
             starPopSound.play();
-            star1.addEventListener("animationend", () => {
+            star1.addEventListener("animationend", function() {
               viewElement(star3, false);
               starPopSound.play();
             });
-            star3.addEventListener("animationend", () => {
+            star3.addEventListener("animationend", function() {
               viewElement(star2, false);
               starPopSound.play();
             });
-            star2.addEventListener("animationend", () => {
+            star2.addEventListener("animationend", function() {
               viewElement(great, false);
             });
           };
