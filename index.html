@@ -3075,17 +3075,29 @@
           const showStars = () => {
             viewElement(star1, false);
             starPopSound.play();
-            star1.addEventListener("animationend", function() {
+            setTimeout(() => {
               viewElement(star3, false);
               starPopSound.play();
-            });
-            star3.addEventListener("animationend", function () {
+            },500)
+            // star1.addEventListener("animationend", function() {
+            //   viewElement(star3, false);
+            //   starPopSound.play();
+            // });
+            setTimeout(() => {
               viewElement(star2, false);
               starPopSound.play();
-            });
-            star2.addEventListener("animationend", function () {
+            },1000)
+            // star3.addEventListener("animationend", function () {
+            //   viewElement(star2, false);
+            //   starPopSound.play();
+            // });
+            setTimeout(() => {
               viewElement(great, false);
-            });
+              starPopSound.play();
+            },1500)
+            // star2.addEventListener("animationend", function () {
+            //   viewElement(great, false);
+            // });
           };
 
           const hideStars = () => {
@@ -3126,17 +3138,6 @@
           };
 
           const firstSceneTranstion = () => {
-            star1.removeEventListener("animationend", function() {
-              viewElement(star3, false);
-              starPopSound.play();
-            });
-            star3.removeEventListener("animationend", function () {
-              viewElement(star2, false);
-              starPopSound.play();
-            });
-            star2.removeEventListener("animationend", function () {
-              viewElement(great, false);
-            });
             background.classList.add("scene-transtion-animation");
             hideStars();
             viewElement(background2, false);
